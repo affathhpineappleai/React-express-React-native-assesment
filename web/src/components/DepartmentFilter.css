@@ -1,0 +1,21 @@
+.department-filter {
+  margin-bottom: 20px;
+}
+
+.department-filter button {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #eee;
+  color: #000;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.department-filter button.active {
+  background-color: #007bff;
+  color: #fff;
+}

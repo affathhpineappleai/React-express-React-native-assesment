@@ -1,0 +1,77 @@
+.employee-card {
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 300px;
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.employee-info {
+  flex: 1;
+  max-width: 70%;
+}
+
+.employee-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.employee-info p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.employee-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.employee-actions button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #e3f2fd;
+  color: #007bff;
+}
+
+.edit-btn:hover {
+  background-color: #c5dbf8;
+}
+
+.delete-btn {
+  background-color: #ffebee;
+  color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #f7c5c2;
+}
+
+.employee-photo {
+  width: 120px; /* bigger image */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 20px;
+  flex-shrink: 0;
+  border: 3px solid #007bff;
+}

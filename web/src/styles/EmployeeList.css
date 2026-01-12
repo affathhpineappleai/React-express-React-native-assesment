@@ -1,0 +1,99 @@
+.employee-list-container {
+  padding: 20px;
+}
+
+.employee-list-container h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Header section with title and add button */
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.employee-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.add-employee-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.add-employee-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.add-employee-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+/* Grid for employee cards */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* increased min-width for bigger cards */
+  gap: 24px; /* more spacing between cards */
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .employee-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .add-employee-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+  
+  .employee-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-header h1 {
+    font-size: 26px;
+  }
+  
+  .add-employee-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  
+  .employee-grid {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+}

@@ -1,0 +1,128 @@
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 24px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 400px;
+  animation: slideDown 0.3s ease-out;
+  font-size: 14px;
+  
+  /* Add solid background as fallback */
+  background: rgba(59, 130, 246, 0.95); /* default blue with opacity */
+  
+  /* Backdrop filter with vendor prefixes */
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  backdrop-filter: blur(10px);
+}
+
+/* Update the gradient backgrounds to work better with backdrop-filter */
+.toast.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.95));
+  border-left: 4px solid #047857;
+}
+
+.toast.error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(220, 38, 38, 0.95));
+  border-left: 4px solid #b91c1c;
+}
+
+.toast.info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
+  border-left: 4px solid #1d4ed8;
+}
+
+.toast.warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.95), rgba(217, 119, 6, 0.95));
+  border-left: 4px solid #b45309;
+}
+
+.toast .toast-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.toast .toast-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.toast-icon {
+  font-size: 18px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* For fade out effect before removing */
+.toast.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .toast {
+    background: rgba(59, 130, 246, 0.98); /* More opaque fallback */
+  }
+  
+  .toast.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+  }
+  
+  .toast.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .toast.info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  .toast.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+}
